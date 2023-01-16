@@ -1,4 +1,18 @@
+import Link from "next/link";
+import {Fragment} from "react";
+
+
 function NewsPage(){
-    return <h1>The News Pahge</h1>
+    return(
+            <Fragment>
+            <ul>
+                <li>
+                    <Link href='/news/details'>
+                        It's a detail s page
+                    </Link>
+                </li>
+            </ul>
+            </Fragment>
+    );
     }
     export default NewsPage;
