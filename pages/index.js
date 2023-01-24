@@ -1,7 +1,8 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
-
-function HomePage({news}){
+import Blog from "../components/blog";
+import User from "../components/user";
+function HomePage({user}){
     const router=useRouter()
     const clickHandler=()=>{
         router.push('/blog')
@@ -12,28 +13,12 @@ function HomePage({news}){
                 <Link href="/news">
                         News
                 </Link>
+                <Link href='/users'>
+                    Users
+                </Link>
             </li>
         <button type="button" onClick={clickHandler}> Blogs</button>
         </ul>
-                <div>
-                    {news.map(news => {
 
-                        return(
-                            <div>
-                                <h1 key={news.id}><p>{news.title}</p></h1>
-                            </div>
-                        )
-                    })}
-                </div>
     </div>)}
 export default HomePage;
-export  async function getStaticProps(){
-    const res=await fetch('https://jsonplaceholder.typicode.com/posts')
-    const news=await res.json();
-    console.log(news)
-    return{
-        props:{
-            news:news
-        }
-        }
-}
