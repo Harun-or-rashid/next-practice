@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {useRouter} from "next/router";
-import Blog from "../components/blog";
+import Post from "../components/post";
 import User from "../components/user";
 function HomePage({user}){
     const router=useRouter()
@@ -12,7 +12,7 @@ function HomePage({user}){
             <li>
                 <Link href="/news">
                         News
-                </Link>
+                </Link><br/>
                 <Link href='/users'>
                     Users
                 </Link>
