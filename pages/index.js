@@ -1,4 +1,4 @@
-import Link from "next/link";
+ import Link from "next/link";
 import {useRouter} from "next/router";
 import Post from "../components/post";
 import User from "../components/user";
@@ -16,6 +16,7 @@ function HomePage({user}){
                 <Link href='/users'>
                     Users
                 </Link>
+                {/*<Link href={/news}*/}
             </li>
         <button type="button" onClick={clickHandler}> Blogs</button>
         </ul>
